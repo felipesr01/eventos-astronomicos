@@ -1,5 +1,6 @@
 import dados from "./data/chuvas-de-meteoros.js";
 import {verificaChuvaHoje, verificaChuva2Meses} from './funcoes/funcoesLogicas.js'
+import imprimeLista from "./funcoes/funcoesInterface.js";
 let data = new Date()
 
 const chuvasHoje = dados.filter(
@@ -13,10 +14,10 @@ const chuvasProx2Meses = dados.filter(
 console.log("\nChuvas de Meteoro\n\n")
 if(chuvasHoje.length > 0) {
     console.log("CHUVAS QUE PODERAO SER VISTAS HOJE")
-    console.log(chuvasHoje)
+    imprimeLista(chuvasHoje)
 } else {
     console.log("Nenhuma chuva podera ser vista hoje")
 }
 
 console.log("CHUVAS QUE PODERAO SER VISTAS NOS PROXIMOS 2 MESES")
-console.log(chuvasProx2Meses)
+imprimeLista(chuvasProx2Meses)

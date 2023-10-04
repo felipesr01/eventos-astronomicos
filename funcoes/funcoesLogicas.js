@@ -30,4 +30,28 @@ function verificaChuva2Meses (chuva, data){
     return (dataAtual < dataInicio && dataInicio < dataFim)
 }
 
-export {verificaChuvaHoje, verificaChuva2Meses};
+function inverteData (data) {
+    const dataInvertida = data.split('/')
+
+    return dataInvertida[1]+'/'+dataInvertida[0]
+}
+
+function retornaIntensidade (intensidade) {
+    let novaIntensidade = '1 (Fraca)';
+
+    if(intensidade.indexOf('Forte') >= 0) {
+        novaIntensidade = '3 (Forte)';
+    }
+    else if (intensidade.indexOf('Média') >= 0) {
+        novaIntensidade = '2 (Média)';
+    }
+    else if (intensidade.indexOf('Irregular') >= 0) {
+        novaIntensidade = '(Irregular)';
+    }
+
+    return novaIntensidade;
+}
+
+const retornaHemisferio = (declinacao) => declinacao >= 0 ? 'Norte' : 'Sul';
+
+export {verificaChuvaHoje, verificaChuva2Meses, inverteData, retornaIntensidade, retornaHemisferio};

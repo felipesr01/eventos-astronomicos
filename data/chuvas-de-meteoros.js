@@ -1,4 +1,4 @@
-const chuvas = [
+const dados = [
     {
         nome: 'Alfa Centaurídeos',
         inicio: '01/28',
@@ -332,4 +332,4 @@ const chuvas = [
 
 ]
 
-export default chuvas;
+export default dados;
